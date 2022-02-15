@@ -67,7 +67,7 @@ class Provider extends AbstractProvider implements ProviderInterface
         $state = Str::random(40);
 
         if (!$this->isStateless()) {
-            $this->request->getSession()->set('state', $state);
+            $this->request->session()->set('state', $state);
         }
 
         return new RedirectResponse($this->getAuthUrl($state));
